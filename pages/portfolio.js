@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Divider, useColorModeValue } from '@chakra-ui/react'
 import Section from '../components/section'
 import { WorkGridItem } from '../components/grid-item.js'
 import thumbBlueBeatz from '../public/images/bluebeatz.png'
@@ -10,8 +10,16 @@ const Portfolio = () => {
   const year = date.getFullYear();
   return (
     <Layout>
-    <Container>
-      <Heading as="h2" fontSize={20} mb={4}>
+    <Container
+    bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.100')}
+    pr={10}
+    pl={10}
+    pt={10}    
+    pb={10}
+    borderRadius="lg"
+    border="1px solid rgba(255,255,255,.3)"
+    >
+      <Heading mb={4} variant="page-title">
         Portfolio
       </Heading>
 

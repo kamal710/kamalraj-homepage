@@ -14,7 +14,8 @@ import {
   IconButton,
   useColorModeValue
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { SiKalilinux } from 'react-icons/si'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -23,10 +24,13 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
     <NextLink href={href} passHref scroll={false}>
       <Link
         p={2}
-        bg={active ? 'grassTeal' : undefined}
-        color={active ? 'skyblue' : inactiveColor}
+        bg={active ? 'rgba(0, 128, 128, 100)' : undefined}
+        color={active ? 'black' : inactiveColor}
         target={target}
         {...props}
+        borderRadius="md"
+        pt={1}
+        pb={1}
       >
         {children}
       </Link>
@@ -42,7 +46,7 @@ const Navbar = props => {
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
+      bg={useColorModeValue('#1a202c')}
       css={{ backdropFilter: 'blur(10px)' }}
       zIndex={2}
       {...props}
@@ -66,6 +70,7 @@ const Navbar = props => {
           display={{ base: 'none', md: 'flex' }}
           width={{ base: 'full', md: 'auto' }}
           alignItems="center"
+          align="right"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
         >
